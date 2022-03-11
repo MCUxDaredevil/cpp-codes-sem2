@@ -19,10 +19,11 @@ class Triangle {
 	
 	public:
 		void getData() {
-			cout << "Enter the base of the triangle : ";
+			cout << "\nEnter the base of the triangle : ";
 			cin >> b;
 			cout << "Enter the height of the triangle : ";
 			cin >> h;
+			cout << endl;
 		}
 		
 		float area() {
@@ -30,9 +31,52 @@ class Triangle {
 		}
 };
 
+class Circle {
+	
+	float r;
+	
+	public:
+		void getData() {
+			cout << "\nEnter the radius of the circle : ";
+			cin >> r;
+			cout << endl;
+		}
+		
+		float area() {
+			return (3.14 * r * r);
+		}
+};
+
+class Square {
+	
+	float l;
+	
+	public:
+		void getData() {
+			cout << "\nEnter the length of the square : ";
+			cin >> l;
+			cout << endl;
+		}
+		
+		float area() {
+			return (l * l);
+		}
+};
+
 int main() {
 	
+	Square s;
+	Triangle t;
+	Circle c;
 	
+	s.getData();
+	cout << "Area of the square is " << s.area() << endl;
+	
+	t.getData();
+	cout << "Area of the triangle is " << t.area() << endl;
+	
+	c.getData();
+	cout << "Area of the circle is " << c.area() << endl;
 	
 	return 0;
 }
