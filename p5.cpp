@@ -11,73 +11,75 @@ License			MIT
 */
 
 #include<iostream>
+#include<string>
 using namespace std;
 
 class String {
     public:
-        char s1[20];
-        char s2[20];
+        void length(){
+            int l=0;
+            char x[20];
+            String y;
 
-        void showData(){
-            cout<<"The first string is: "<<s1;
-            cout<<"\nThe second string is: "<<s2;
-        }
+            cout<<"Enter a string: ";
+            cin.getline(y,20);
 
-        void length(int x){
-            int l1=0,l2=0;
             for(int i=0; i<20; i++){
-                if(s1[i] == '\0'){
-                    l1 = i;
+                if(x[i] == '\0'){
+                    l = i;
                     break;
                 }
             }
+            cout<<"Length of String = "<<l<<endl;
+        }
+        void copy(){
+            char s1[20];
+            char s2[20];
+
+            cout<<"Enter the source string: "<<endl;
+            cin.getline(s1, 20);
+            cout<<"\nEnter the destination string: "<<endl;
+            cin.getline(s2, 20);
+
             for(int i=0; i<20; i++){
-                if(s2[i] == '\0'){
-                    l2 = i;
-                    break;
-                }
-            }
-            if(x==1){
-                cout<<"\nLength of String1 = "<<l1<<endl;
-            }
-            else if(x==2){
-                cout<<"Length of String2 = "<<l2<<endl;
-            }
-            else{
-                cout<<"Invalid input!\n\nUse 'length(1)' to get the length of String1\nUse 'length(2)' to get the length of String2"<<endl;
+                s2[i] = s1[i];
             }
         }
 
-        void copy(int a){
-            if(a==12){
-                for(int i=0; i<20; i++)
-                    s2[i] = s1[i];
-            }
-            else if(a==21){
-                for(int i=0; i<20; i++)
-                    s1[i] = s2[i];
-            }
-            else {
-                cout<<"Invalid input!\n\nUse 'copy(12)' to copy String1 into String2\nUse 'copy(21)' to copy String2 into String1"<<endl;
-            }
-        }
+        void compare(){}
 
-        static int compare(){
-            return 1;
-        }
+        void concat(){}
+
+        void search(){}
 };
 
 int main(){
 
-    String object;
+    String str;
+    int choice=0;
 
-    cout<<"\nEnter the first string: ";
-    cin.getline(object.s1,20);
-    cout<<"\nEnter the second string: ";
-    cin.getline(object.s2, 20);
-    cout<<"\nvalues recorded!\n"<<endl;
+    cout<<"\n\n1. Get Length of string\n2. Copy strings\n3. Compare two strings\n4. Concatenate two strings\n5. Search inside a string\n\nChoose any of the given options: ";
+    cin>>choice;
+    cout<<"\n"<<endl;
 
-    object.showData();
+    if(choice == 1){
+        str.length();
+    }
+    else if(choice == 2){
+        str.copy();
+    }
+    else if(choice == 3){
+        str.compare();
+    }
+    else if(choice == 4){
+        str.concat();
+    }
+    else if(choice == 5){
+        str.search();
+    }
+    else{
+        cout<<"Invalid choice!"<<endl;
+    }
 
     return 0;
 }
