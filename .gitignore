@@ -52,8 +52,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-try.c
-test.c
+try.cpp
+test.cpp
 .idea
-cmake-build-debug
-CMakeLists.txt
